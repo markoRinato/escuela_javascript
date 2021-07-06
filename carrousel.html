@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #8f57fd;
+        font-family: "Mulish", sans-serif;
+      }
+      .carrousel {
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+      }
+      .carrousel__container {
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+      }
+      .carrousel-item {
+        background-color: black;
+        width: 200px;
+        height: 250px;
+        display: inline-block;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        position: relative;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+      }
+      .carrousel-item:hover ~ .carrousel-item {
+        transform: translate3d(100px,0,0);
+      }
+      .carrousel__container:hover .carrousel-item {
+        opacity: 0.3;
+      }
+      .carrousel__container:hover .carrousel-item:hover {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+      .carrousel-item__img{
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+      }
+      .carrousel-item__details{
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        font-size: 10px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: flex-end;
+      }
+      .carrousel-item__details:hover {
+        opacity: 1;
+      }
+
+      .carrousel-item__details--icon--play {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 200px;
+      }
+      .carrousel-item__details--icon--suma {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 200px;
+        right: 140px;
+      }
+
+      .carrousel-item__details--title {
+        position: absolute;
+        bottom: 5px;
+        color: white;
+        margin-left: 2px;
+        font-size: 10px;
+        }
+
+        .carrousel-item__details--subtitle {
+        position: absolute;
+        bottom: -5px;
+        color: white;
+        margin-left: 2px;
+        font-size: 8px;
+        }
+    </style>
+    <title>Carrousel 1</title>
+  </head>
+  <body>
+    <section class="carrousel">
+      <div class="carrousel__container">
+        <div class="carrousel-item">
+          <img
+            class="carrousel-item__img"
+            src="https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg?cs=srgb&dl=pexels-pixabay-270373.jpg&fm=jpg"
+            alt="curso1"
+          />
+          <div class="carrousel-item__details">
+            <div>
+              <img class="carrousel-item__details--icon--play" src="./img/play-icon.png" alt="" />
+              <img class="carrousel-item__details--icon--suma" src="./img/plus-icon.png" alt="" />
+            </div>
+            <p class="carrousel-item__details--title">Título descriptivo</p>
+            <p class="carrousel-item__details--subtitle">2019 16+ 114 minutos</p>
+          </div>
+        </div>
+        <div class="carrousel-item"></div>
+        <div class="carrousel-item"></div>
+      </div>
+    </section>
+  </body>
+</html>
